@@ -17,7 +17,7 @@ export class UserController {
 
     @Post()
     async create(@Body("id") id: number, @Body("name") name: string) {
-        return await this.commandBus.execute<CreateUserCommand, void>(new CreateUserCommand(id, name));
+        return await this.commandBus.execute<CreateUserCommand, User>(new CreateUserCommand(id, name));
     }
 }
 
